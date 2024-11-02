@@ -2,20 +2,20 @@
 
 import Image from 'next/image'
 import RegistrationForm from "./components/ui/RegistrationForm"
-import bgImage from "@/app/images/Cover1.jpg"
 import ExhibitionDetails from "@/app/components/ExhibitionDetails"
+import bgImage from "@/app/images/Cover1.jpg"
 import logo from "@/app/images/white logo.png"
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-100  overflow-hidden">
+    <div className="min-h-screen bg-gray-100 overflow-hidden">
       {/* Background Image */}
       <div className="fixed inset-0">
         <Image
           src={bgImage}
           alt="Background"
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: 'cover' }}
           quality={100}
           priority
         />
@@ -26,7 +26,7 @@ export default function Home() {
         <Image
           src={logo}
           alt="Logo"
-          width={900}
+          width={500}
           height={50}
           className="w-64 sm:w-80 md:w-96 lg:w-[500px] h-auto"
           priority
@@ -46,10 +46,10 @@ export default function Home() {
       </header>
 
       {/* Main Content */}
-      <main className="relative flex-grow flex flex-col lg:flex-row items-start justify-center lg:justify-end  sm:px-6 lg:px-16 py-8 lg:py-12">
+      <main className="relative flex-grow flex flex-col lg:flex-row items-start justify-center lg:justify-end sm:px-6 lg:px-16 py-8 lg:py-12">
         {/* Registration Form */}
-        <div className="w-full max-w-md lg:w-1/2 xl:w-2/5 mt-4 lg:mt-0"> {/* Adjusted mt-4 */}
-          <div className="relative bg-opacity-95 p-6  sm:p-8 rounded-lg shadow-2xl pb-56">
+        <div className="w-full max-w-md lg:w-1/2 xl:w-2/5 mt-4 lg:mt-0">
+          <div className="relative bg-white bg-opacity-95 p-6 sm:p-8 rounded-lg shadow-2xl">
             <RegistrationForm />
           </div>
         </div>

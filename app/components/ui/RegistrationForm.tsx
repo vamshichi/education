@@ -5,8 +5,6 @@ import React, { useState, useRef } from "react";
 const RegistrationForm = () => {
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
-  
-  // Define a ref for the form
   const formRef = useRef<HTMLFormElement | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -35,13 +33,9 @@ const RegistrationForm = () => {
 
       if (response.ok) {
         setSuccess("Thank you for registering! We will contact you soon.");
-        
-        // Reset the form fields
         if (formRef.current) {
           formRef.current.reset();
         }
-
-        // Clear the success message after 5 seconds
         setTimeout(() => {
           setSuccess(null);
         }, 5000);
@@ -55,7 +49,6 @@ const RegistrationForm = () => {
       }
     } catch (error) {
       setError(error instanceof Error ? error.message : 'An unknown error occurred');
-      // Clear the error message after 5 seconds
       setTimeout(() => {
         setError(null);
       }, 5000);
@@ -67,7 +60,6 @@ const RegistrationForm = () => {
       <form ref={formRef} onSubmit={handleSubmit} className="bg-white p-8 rounded shadow-md max-w-md w-full">
         <h1 className="text-2xl font-bold mb-6 text-gray-700">Real Estate Registration</h1>
 
-        {/* Success and error messages */}
         {success && (
           <div className="mb-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg flex items-center">
             <svg className="w-6 h-6 mr-2 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -86,7 +78,6 @@ const RegistrationForm = () => {
           </div>
         )}
 
-        {/* Form Fields */}
         <div className="mb-4">
           <label htmlFor="name" className="block text-gray-700">Name</label>
           <input type="text" id="name" name="name" className="w-full p-2 border rounded text-gray-700" required placeholder="Enter your name" />
@@ -104,8 +95,8 @@ const RegistrationForm = () => {
 
         <div className="mb-4">
           <label htmlFor="preferredCity" className="block text-gray-700">Preferred City</label>
-          <select id="preferredCity" name="preferredCity" className="w-full p-2 border rounded text-gray-700" required>
-            <option value="" disabled selected>Select your City</option>
+          <select id="preferredCity" name="preferredCity" className="w-full p-2 border rounded text-gray-700" required defaultValue="">
+            <option value="" disabled>Select your City</option>
             <option value="Mumbai">Mumbai</option>
             <option value="Delhi">Delhi</option>
             <option value="Hyderabad">Hyderabad</option>
@@ -113,36 +104,33 @@ const RegistrationForm = () => {
             <option value="Chennai">Chennai</option>
             <option value="Pune">Pune</option>
             <option value="Thane">Thane</option>
-            <option value="KolKata">Kolkata</option>
+            <option value="Kolkata">Kolkata</option>
             <option value="Gujarat">Gujarat</option>
-            <option value="Delhi">Delhi</option>
-            <option value="Rajasthan">Rajatasthan</option>
+            <option value="Rajasthan">Rajasthan</option>
             <option value="Jaipur">Jaipur</option>
             <option value="Bhopal">Bhopal</option>
             <option value="Goa">Goa</option>
-            <option value="Dehradum">Dehradum</option>
+            <option value="Dehradun">Dehradun</option>
             <option value="Gurgaon">Gurgaon</option>
             <option value="Lucknow">Lucknow</option> 
             <option value="Mangalore">Mangalore</option>
-            <option value="Chandigard">Chandigard</option>
+            <option value="Chandigarh">Chandigarh</option>
             <option value="Coimbatore">Coimbatore</option>
-            <option value="indore">Indore</option>
+            <option value="Indore">Indore</option>
             <option value="Nagpur">Nagpur</option>
-            <option value="Nasik">nasik</option>
+            <option value="Nasik">Nasik</option>
             <option value="Aurangabad">Aurangabad</option>
             <option value="Other">Other</option>           
-
-            {/* Add more options as needed */}
           </select>
         </div>
 
         <div className="mb-4">
           <label htmlFor="preferredBudget" className="block text-gray-700">Preferred Budget</label>
-          <select id="preferredBudget" name="preferredBudget" className="w-full p-2 border rounded text-gray-700" required>
-            <option value="" disabled selected>Select your budget</option>
+          <select id="preferredBudget" name="preferredBudget" className="w-full p-2 border rounded text-gray-700" required defaultValue="">
+            <option value="" disabled>Select your budget</option>
             <option value="Under 1 Cr INR">Under 1 Cr INR</option>
-            <option value="1 Cr - 2 Cr INR">Up to 1 Crore</option>
-            <option value="2 Cr - 5 Cr INR">Up to 2 Crores</option>
+            <option value="1 Cr - 2 Cr INR">1 Cr - 2 Cr INR</option>
+            <option value="2 Cr - 5 Cr INR">2 Cr - 5 Cr INR</option>
             <option value="Above 5 Cr">Above 5 Cr</option>
           </select>
         </div>
