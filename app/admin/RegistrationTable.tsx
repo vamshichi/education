@@ -1,9 +1,10 @@
-'use client'
+// app/admin/RegistrationTable.tsx
+'use client';
 
-import { Registration } from '@prisma/client'
+import { Registration } from '@prisma/client';
 
 type RegistrationTableProps = {
-  registrations: Registration[]
+  registrations: Registration[];
 }
 
 export default function RegistrationTable({ registrations }: RegistrationTableProps) {
@@ -60,5 +61,5 @@ export default function RegistrationTable({ registrations }: RegistrationTablePr
         </tbody>
       </table>
     </div>
-  )
+  );
 }

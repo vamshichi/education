@@ -1,3 +1,4 @@
+// app/admin/page.tsx
 import { PrismaClient } from "@prisma/client";
 import DateRangePicker from '@/app/admin/DateRangePicker';
 import DownloadButton from '@/app/admin/DownloadButton';
