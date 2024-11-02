@@ -31,12 +31,13 @@ export default function Home() {
           className="w-64 sm:w-80 md:w-96 lg:w-[500px] h-auto"
           priority
         />
+        <p className="text-white text-xl sm:text-2xl md:text-3xl font-bold">
+          DUBAI
+        </p>
         <p className="text-yellow-500 text-xl sm:text-2xl md:text-3xl font-semibold pb-4">
           7th and 8th of December
         </p>
-        <p className="text-white text-xl sm:text-2xl md:text-3xl font-semibold">
-          Dubai
-        </p>
+        
         <p className="text-white text-xl sm:text-2xl md:text-3xl font-semibold">
           CROWNE PLAZA
         </p>
