@@ -49,7 +49,7 @@ export default function Home() {
       <main className="relative flex-grow flex flex-col lg:flex-row items-start justify-center lg:justify-end sm:px-6 lg:px-16 py-8 lg:py-12">
         {/* Registration Form */}
         <div className="w-full max-w-md lg:w-1/2 xl:w-2/5 mt-4 lg:mt-0">
-          <div className="relative bg-white bg-opacity-95 p-6 sm:p-8 rounded-lg shadow-2xl">
+          <div className="relative p-6 sm:p-8 rounded-lg shadow-2xl">
             <RegistrationForm />
           </div>
         </div>
